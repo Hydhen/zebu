@@ -10,7 +10,7 @@ class Register
     public:
         Register(T value, char size);
         Register(Register const &);
-
+        Register(Register const &&) = delete;
     public:
         Register &operator=(Register const &);
         friend inline std::ostream &operator<<(std::ostream &out, Register const &reg);
@@ -24,6 +24,5 @@ class Register
         T m_value;
         char m_size;
 };
-
 
 #endif // !defined(__REGISTER_HPP__)
